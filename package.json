@@ -1,0 +1,27 @@
+{
+  "name": "framer-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:assets": "cp -r public/* build/",
+    "build:js": "rollup -c",
+    "build": "npm run build:assets & npm run build:js",
+    "watch:assets": "onchange \"public/**/*.*\" -- npm run build:assets",
+    "watch:js": "rollup -c -w",
+    "watch": "concurrently -k \"node live-server.js\" \"npm run watch:assets\" \"npm run watch:js\""
+  },
+  "author": "James Ooi",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "concurrently": "^3.5.0",
+    "live-server": "^1.2.0",
+    "onchange": "^3.2.1",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.0.0"
+  }
+}
